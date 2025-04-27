@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Bundling Recommender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 40px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        input[type="text"], select, button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .response-container {
+            margin-top: 30px;
+            width: 100%;
+            max-width: 800px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        tr:hover {background-color: #f1f1f1;}
+
+    </style>
+</head>
+<body>
+
+    <h1>Smart Bundling Recommender</h1>
+
+    <form method="POST">
+        <label for="company">Enter or Select Company Name:</label>
+        <input list="companies" name="company" id="companyInput" placeholder="Start typing..." required>
+        <datalist id="companies">
+            <option value="Apollo Hospitals">
+            <option value="Indian Tobacco Company">
+            <option value="Tata Consultancy Services">
+            <option value="Mahindra & Mahindra">
+            <option value="Max Healthcare">
+            <option value="Fortis Healthcare">
+            <option value="Biocon">
+        </datalist>
+
+        <label for="focus">Select Priority Area:</label>
+        <select name="focus" id="focus" required>
+            <option value="">-- Choose a Priority --</option>
+            <option value="Healthcare Data Management">Healthcare Data Management</option>
+            <option value="AI & Machine Learning Adoption">AI & Machine Learning Adoption</option>
+            <option value="Security & Compliance">Security & Compliance</option>
+            <option value="Enterprise Cloud Transformation">Enterprise Cloud Transformation</option>
+        </select>
+
+        <button type="submit">Generate Recommendations</button>
+    </form>
+
+    {% if response %}
+    <div class="response-container">
+        <h2>Recommended Bundles</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Recommendation #</th>
+                    <th>Bundle (AWS Services)</th>
+                    <th>Reason</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{ response|safe }}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+
+</body>
+</html>
