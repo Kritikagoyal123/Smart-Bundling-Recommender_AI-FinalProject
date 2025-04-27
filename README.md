@@ -1,4 +1,4 @@
-**📊 Smart Bundling Recommender**
+<center><h1>📊 Smart Bundling Recommender</h1></center>
 
 The Smart Bundling Recommender is an AI-powered business tool that helps users generate customized AWS service bundles based on company name and focus area.
 It is built using Flask, ChromaDB, Ollama LLM, and HuggingFace Embeddings, combined with a clean and responsive web front-end.
