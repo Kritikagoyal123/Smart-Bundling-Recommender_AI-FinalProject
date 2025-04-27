@@ -42,24 +42,24 @@ It is built using Flask, ChromaDB, Ollama LLM, and HuggingFace Embeddings, combi
 
 
 **🛠️ Setup Instructions**
-	1.	Clone the repository:
+	
+ 1.	Clone the repository:
 
-git clone YOUR_REPO_LINK_HERE
-cd your_project_folder
+git clone https://github.com/Kritikagoyal123/Smart-Bundling-Recommender_AI-FinalProject
+cd Smart-Bundling-Recommender_AI-FinalProject
 
-	2.	Install dependencies:
+2.	Install dependencies:
 
 pip install flask chromadb llama-index huggingface-hub
 
-	3.	Run Flask app:
+3.	Run Flask app:
 
 python app.py
 
-	4.	Open browser at:
+4.	Open browser at:
 http://127.0.0.1:5000/
 
-
-**🔮 Future Enhancements **
+**🔮 Future Enhancements**
 	•	⭐ Highlight Top Recommendation
 	•	📥 Download results as PDF or CSV
 	•	📈 Add Bundle Suitability Scoring
